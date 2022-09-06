@@ -4,8 +4,10 @@
   "description": "1. vscode extension\r - Material theme\r - Material icon theme\r - Prettier\r - bracket pair colorizer\r - Indent-rainbow\r - Auto rename tag\r - HTML CSS SUPPORT\r - json pretty printer(ctrl + shift + j)",
   "main": "index.js",
   "scripts": {
-    "heroku-prebuild": "cd client && npm ci && xcopy src build /e /h /c /i /y && xcopy build \"../server/build\" /e /h /c /i /y",
-    "start": "cd server && npm ci && tsc && node app.js",
+    "client-build": "cd client && npm ci && xcopy src build /e /h /c /i /y && cd ../",
+    "server-build": "cd server && npm ci --dev && npm run build && cd ../",
+    "heroku-prebuild": "npm run client-build && npm run server-build && xcopy client\\build server\\dist\\build /e /h /c /i /y",
+    "start": "cd server && npm run start",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
