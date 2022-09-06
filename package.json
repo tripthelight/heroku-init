@@ -1,0 +1,22 @@
+{
+  "name": "heroku-init",
+  "version": "1.0.0",
+  "description": "1. vscode extension\r - Material theme\r - Material icon theme\r - Prettier\r - bracket pair colorizer\r - Indent-rainbow\r - Auto rename tag\r - HTML CSS SUPPORT\r - json pretty printer(ctrl + shift + j)",
+  "main": "index.js",
+  "scripts": {
+    "heroku-prebuild": "cd client && npm ci && xcopy src build /e /h /c /i /y && xcopy build \"../server/build\" /e /h /c /i /y",
+    "start": "cd server && npm ci && tsc && node app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tripthelight/heroku-init.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tripthelight/heroku-init/issues"
+  },
+  "homepage": "https://github.com/tripthelight/heroku-init#readme"
+}
