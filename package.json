@@ -6,7 +6,7 @@
   "scripts": {
     "client-build": "cd client && npm ci && cp -r src build && cd ../",
     "server-build": "cd server && npm ci --dev && npm run build && cd ../",
-    "heroku-prebuild": "npm run client-build && npm run server-build && cp -r client\\build server\\dist\\build",
+    "heroku-prebuild": "npm run client-build && npm run server-build && cp -r ./client/build ./server/dist/build",
     "start": "cd server && npm run start",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
